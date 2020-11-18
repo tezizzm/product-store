@@ -26,14 +26,12 @@ namespace bootcamp_store
 
         public async Task<string> GetProduct(int id)
         {
-            Console.WriteLine(_client.BaseAddress + $"/api/products/{id}");
-            return await _client.GetStringAsync($"/{id}");
+            return await _client.GetStringAsync($"/api/products/{id}");
         }
 
         public async Task DeleteProduct(int id)
         {
-            Console.WriteLine(_client.BaseAddress + $"/api/products/{id}");
-            await _client.DeleteAsync($"/{id}");
+            await _client.DeleteAsync($"/api/products/{id}");
         }
     }
 }
