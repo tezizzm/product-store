@@ -20,7 +20,7 @@ namespace bootcamp_store
 
         public async Task CreateProduct(string product)
         {
-            await _client.PostAsync("", new StringContent("product", Encoding.UTF8, "application/json"));
+            await _client.PostAsync("", new StringContent(product, Encoding.UTF8, "application/json"));
         }
 
         public async Task<string> GetProduct(string id)
