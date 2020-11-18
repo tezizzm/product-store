@@ -22,7 +22,7 @@ namespace bootcamp_store
             services.AddControllersWithViews();
             services.AddHttpClient<ICoreApiService, CoreApiService>(c =>
             {
-                c.BaseAddress = new Uri("https://core-api");
+                c.BaseAddress = new Uri("https://core-api:8080");
                 c.DefaultRequestHeaders.Add("Accept", "application/json");
             });
         }
