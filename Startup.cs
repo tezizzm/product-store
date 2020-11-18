@@ -22,7 +22,7 @@ namespace bootcamp_store
             services.AddControllersWithViews();
             services.AddHttpClient<ICoreApiService, CoreApiService>(c =>
             {
-                c.BaseAddress = new Uri("core-api.default.svc.cluster.local");
+                
                 c.DefaultRequestHeaders.Add("Accept", "application/json");
             });
         }

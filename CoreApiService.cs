@@ -15,22 +15,22 @@ namespace bootcamp_store
 
         public async Task<string> GetProducts()
         {
-            return await _client.GetStringAsync("");
+            return await _client.GetStringAsync("core-api.default.svc.cluster.local:8080");
         }
 
         public async Task CreateProduct(string product)
         {
-            await _client.PostAsync("", new StringContent("product", Encoding.UTF8, "application/json"));
+            await _client.PostAsync("core-api.default.svc.cluster.local:8080", new StringContent("product", Encoding.UTF8, "application/json"));
         }
 
         public async Task<string> GetProduct(string id)
         {
-            return await _client.GetStringAsync($"/{id}");
+            return await _client.GetStringAsync($"core-api.default.svc.cluster.local:8080/{id}");
         }
 
         public async Task DeleteProduct(string id)
         {
-            await _client.DeleteAsync($"/{id}");
+            await _client.DeleteAsync($"core-api.default.svc.cluster.local:8080/{id}");
         }
     }
 }
