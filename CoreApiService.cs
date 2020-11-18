@@ -23,12 +23,12 @@ namespace bootcamp_store
             await _client.PostAsync("", new StringContent(product, Encoding.UTF8, "application/json"));
         }
 
-        public async Task<string> GetProduct(string id)
+        public async Task<string> GetProduct(int id)
         {
             return await _client.GetStringAsync($"/{id}");
         }
 
-        public async Task DeleteProduct(string id)
+        public async Task DeleteProduct(int id)
         {
             await _client.DeleteAsync($"/{id}");
         }

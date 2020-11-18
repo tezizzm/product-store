@@ -51,7 +51,7 @@ namespace bootcamp_store.Controllers
 
         public async Task<ActionResult> Delete(int id)
         {
-            var jsonString = await _apiService.GetProduct($"/{id}");
+            var jsonString = await _apiService.GetProduct(id);
             var product = JsonConvert.DeserializeObject<Product>(jsonString);
             return View(product);
         }
@@ -62,7 +62,7 @@ namespace bootcamp_store.Controllers
         {
             try
             {
-                await _apiService.DeleteProduct($"/{id}");
+                await _apiService.DeleteProduct(id);
                 return RedirectToAction(nameof(Index));
             }
             catch

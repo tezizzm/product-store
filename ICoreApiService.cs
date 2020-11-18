@@ -6,7 +6,7 @@ namespace bootcamp_store
     {
         Task<string> GetProducts();
         Task CreateProduct(string product);
-        Task<string> GetProduct(string id);
-        Task DeleteProduct(string id);
+        Task<string> GetProduct(int id);
+        Task DeleteProduct(int id);
     }
 }
