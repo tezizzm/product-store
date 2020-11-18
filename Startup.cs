@@ -25,6 +25,7 @@ namespace bootcamp_store
                 c.BaseAddress = new Uri("https://core-api");
                 c.DefaultRequestHeaders.Add("Accept", "application/json");
             });
+            services.AddTransient<ICoreApiService, CoreApiService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
