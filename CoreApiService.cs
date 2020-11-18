@@ -1,4 +1,5 @@
-﻿using System.Net.Http;
+﻿using System;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,11 +26,13 @@ namespace bootcamp_store
 
         public async Task<string> GetProduct(int id)
         {
+            Console.WriteLine(_client.BaseAddress + $"/{id}");
             return await _client.GetStringAsync($"/{id}");
         }
 
         public async Task DeleteProduct(int id)
         {
+            Console.WriteLine(_client.BaseAddress + $"/{id}");
             await _client.DeleteAsync($"/{id}");
         }
     }
