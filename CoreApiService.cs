@@ -16,6 +16,7 @@ namespace bootcamp_store
 
         public async Task<string> GetProducts()
         {
+            Console.WriteLine($"**********************************Address: {_client.BaseAddress}/api/products*******************************************");
             return await _client.GetStringAsync("/api/products");
         }
 
