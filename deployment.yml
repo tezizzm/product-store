@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: product-store
+  name: product-store
+  namespace: product-store
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: product-store
+  template:
+    metadata:
+      labels:
+        app: product-store
+    spec:
+      containers:
+      - image: registry.contour.thewindyvalley.com/library/product-store:latest
+        name: product-store
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP

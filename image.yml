@@ -1,0 +1,15 @@
+apiVersion: kpack.io/v1alpha1
+kind: Image
+metadata:
+  name: product-store
+  namespace: builds
+spec:
+  tag: registry.contour.thewindyvalley.com/library/product-store
+  serviceAccount: tbs-service-account
+  builder:
+    name: base
+    kind: ClusterBuilder
+  source:
+    git:
+      url: https://github.com/tezizzm/product-store
+      revision: main

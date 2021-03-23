@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using Steeltoe.Common.Hosting;
 
 namespace bootcamp_store
 {
@@ -15,6 +16,7 @@ namespace bootcamp_store
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                });
+                })
+                .UseCloudHosting();
     }
 }

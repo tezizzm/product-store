@@ -22,7 +22,7 @@ namespace bootcamp_store
             services.AddControllersWithViews();
             services.AddHttpClient<ICoreApiService, CoreApiService>(c =>
             {
-                c.BaseAddress = new Uri("http://core-api.default.svc.cluster.local:8080");
+                c.BaseAddress = new Uri("product-api.svc.cluster.local");
                 c.DefaultRequestHeaders.Add("Accept", "application/json");
             });
         }
@@ -40,7 +40,7 @@ namespace bootcamp_store
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();

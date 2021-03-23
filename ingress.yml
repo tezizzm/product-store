@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  labels:
+    app: product-store
+  name: product-store
+  namespace: product-store
+spec:
+  rules:
+  - host: product-store.contour.thewindyvalley.com
+    http:
+      paths:
+      - backend:
+          serviceName: product-store
+          servicePort: http
+        path: /
